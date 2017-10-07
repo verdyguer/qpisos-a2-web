@@ -1,0 +1,14 @@
+<p>
+  map-competence works!
+</p>
+<ng2-map 
+zoom="13" 
+center="40.4167754, -3.7037901999999576" 
+(mapReady$)="onMapReady($event)"
+(mapClick)="onMapClick($event)"
+(idle)="onIdle($event)"
+mapTypeId="roadmap">
+  <marker *ngFor="let position of positions" 
+    [position]="position"
+    (initialized$)="onMarkerInit($event)"></marker>
+</ng2-map>

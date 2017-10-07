@@ -1,0 +1,51 @@
+<h3>
+  Available Listings</h3>
+<div class="row">
+  <div class="col s4 m4 l4" *ngFor="let listing of listings">
+    <div class="card">
+      <div class="card-image waves-effect waves-block waves-light">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">
+                      <a class="title"  [routerLink]="['/listing-edit/', listing._id]">
+                  <strong>{{listing.title }}</strong>
+                  <br>
+                  <strong>{{listing.price }} €</strong>
+                </a><br>
+                <div class="row">
+                 <div class="col s4 m4 l3 ">
+                   <table>
+                     <td class="card-action">
+                      <a [routerLink]="['/listing-edit/', listing._id]">Mas información...</a>
+                     </td>
+                     <td class="card-action">
+                        <div class=listing-image ><img class=main-img src="{{listing.images[0] }}"></div>
+                     </td>
+                   </table>
+                    
+                    
+                  </div>
+                  
+                </div>
+                <i class="material-icons right">more_vert</i></span>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Description<i class="material-icons right">close</i></span>
+        <span class="light-text description">{{listing.description }}</span>
+        <table>
+          <tbody>
+            <tr>
+              <td><i class="small centre material-icons">grid_on</i></td>
+              <td><strong>{{listing.size }}</strong></td>
+            </tr>
+            <tr>
+              <td> <i class="small centre material-icons">format_bold</i></td>
+              <td>{{listing.bathrooms }}</td>
+            </tr>
+            <tr>
+              <td><i class="small centre material-icons">hotel</i></td>
+              <td>{{listing.bedrooms }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>

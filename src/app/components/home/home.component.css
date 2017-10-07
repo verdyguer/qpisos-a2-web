@@ -1,0 +1,7 @@
+.nav .nav-wrapper fix{
+background-color: white;    
+}
+.card .card-content .card-action {
+    text-transform: lowercase;
+    position: left;
+  }

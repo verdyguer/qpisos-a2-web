@@ -1,0 +1,20 @@
+<p>
+  listing-edit works!
+</p>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-6 centered-form">
+          <form (ngSubmit)="onSubmitListing(editListingForm)" #editListingForm="ngForm">
+              <div class="form-group">
+                  <label for="title">Title</label>
+                  <input type="text" name="title" class="form-control" [(ngModel)]="listing.title" name="title">
+                </div>
+                <div class="form-group">
+                  <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                </div>
+          </form>
+      </div>
+    </div>
+  </div>
+  <app-map-competence [listings]="competence"></app-map-competence>
+  
