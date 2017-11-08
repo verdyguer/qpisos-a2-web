@@ -3,18 +3,20 @@ import { Component, Input, OnChanges } from '@angular/core';
 import { Ng2MapModule} from 'ng2-map';
 
 
-
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html'
 })
 export class MapComponent implements OnChanges {
   @Input() listings = Array<Listing>();
+  @Input() center: Listing;
   positions: Array<Array<number>>;
 
   ngOnChanges() {
     this.positions = this.listings
-      .map(listing => [listing.location.lat, listing.location.long]);
+      .map(listing => {
+        return listing.location.coordinates;
+      });
   }
 
   onMapReady(map) {

@@ -46,4 +46,10 @@ export class ListingsService extends BaseApiService {
       .catch(super.handleError);
   }
 
+  getCompetence(id: string): Observable<Array<Listing>> {
+    return this.http.get(`${ListingsService.baseEndPoint}/${id}/competence`, BaseApiService.defaultOptions)
+    .map(res => res.json())
+    .catch(super.handleError);
+  }
+
 }

@@ -1,6 +1,6 @@
 <ng2-map 
   zoom="13" 
-  center="40.4167754, -3.7037901999999576" 
+  center="{{center?.location?.coordinates[0]}}, {{center?.location?.coordinates[1]}}" 
   (mapReady$)="onMapReady($event)"
   (mapClick)="onMapClick($event)"
   (idle)="onIdle($event)"

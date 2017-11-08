@@ -21,8 +21,11 @@ export class ListingEditComponent implements OnInit {
         this.listingsService.get(params['id']).subscribe(
           (listing) => this.listing = listing
         );
-        this.listingsService.getAll().subscribe(
-          (listings) => this.competence = listings
+        this.listingsService.getCompetence(params['id']).subscribe(
+          (listings) => {
+            console.log(listings);
+            this.competence = listings
+          }
         )
       }
     )

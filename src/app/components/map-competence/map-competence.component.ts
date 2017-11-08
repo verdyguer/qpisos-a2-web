@@ -14,7 +14,9 @@ positions: Array<Array<number>>;
 
 ngOnChanges() {
   this.positions = this.listings
-    .map(listing => [listing.location.lat, listing.location.long]);
+  .map(listing => {
+    return listing.location.coordinates;
+  });
 }
 
 onMapReady(map) {

@@ -8,10 +8,9 @@ export class Listing {
     size        : number;
     bedrooms    : number;
     bathrooms   : number;
-    location    : { 
-      lat: number,
-      long: number,
-      accurance: number
+    location    : {
+        type: string,
+        coordinates: Array<number>
     };
     lister_name: string;
     lister_url: string;
